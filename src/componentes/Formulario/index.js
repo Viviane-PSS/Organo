@@ -5,7 +5,7 @@ import ListaSuspensa from "../ListaSuspensa";
 import "./Formulario.css";
 
 const Formulario = (props) => {
-  const programas = ["Filme", "Série", "Anime", "Cartoon"];
+  
 
   const [titulo, setTitulo] = useState("");
   const [ano, setAno] = useState("");
@@ -21,6 +21,10 @@ const Formulario = (props) => {
       imagem,
       visual}
     )
+    setTitulo("");
+    setAno("");
+    setImagem("");
+    setVisual("");
   };
 
   return (
@@ -49,7 +53,7 @@ const Formulario = (props) => {
         />
         <ListaSuspensa 
           label="Tipo da Produção Visual" 
-          itens={programas} 
+          itens={props.programas} 
           valor={visual}
           aoAlterado ={ valor => setVisual(valor)}
         />
